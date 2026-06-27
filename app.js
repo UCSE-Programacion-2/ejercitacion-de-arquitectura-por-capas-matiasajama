@@ -1,9 +1,15 @@
+require('dotenv').config({ quiet: true });
+
 const express = require('express');
+const connectDB = require('./config/database');
+
 const app = express();
 
 app.use(express.json());
 
-// TODO: Configurar la conexión a la base de datos (MongoDB)
+if (process.env.NODE_ENV !== 'test') {
+  connectDB();
+}
 
 // TODO: Importar y usar las rutas de partidos
 

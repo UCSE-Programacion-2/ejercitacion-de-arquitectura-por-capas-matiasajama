@@ -4,11 +4,12 @@
   "description": "API REST de partidos de futbol",
   "main": "app.js",
   "scripts": {
-    "start": "node --env-file=.env app.js",
-    "dev": "node --watch --env-file=.env app.js",
+    "start": "node app.js",
+    "dev": "node --watch app.js",
     "test": "jest --detectOpenHandles"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "express": "^4.19.2",
     "mongoose": "^8.4.1"
   },
