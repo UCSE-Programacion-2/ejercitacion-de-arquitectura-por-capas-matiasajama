@@ -2,6 +2,7 @@ require('dotenv').config({ quiet: true });
 
 const express = require('express');
 const connectDB = require('./config/database');
+const partidoRoutes = require('./routes/partidoRoutes');
 
 const app = express();
 
@@ -11,7 +12,7 @@ if (process.env.NODE_ENV !== 'test') {
   connectDB();
 }
 
-// TODO: Importar y usar las rutas de partidos
+app.use('/partidos', partidoRoutes);
 
 const PORT = process.env.PORT || 3000;
 
